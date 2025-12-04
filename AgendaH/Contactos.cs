@@ -72,9 +72,7 @@ namespace AgendaH
                 dataGridContactos.Columns["PersonaId"].Visible = false;
         }
 
-        // -----------------------------------------------------------
-        //                        GUARDAR
-        // -----------------------------------------------------------
+        
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -113,9 +111,7 @@ namespace AgendaH
             MessageBox.Show("Guardado.");
         }
 
-        // -----------------------------------------------------------
-        //                       ACTUALIZAR
-        // -----------------------------------------------------------
+        
 
         private void ActualizarExistente()
         {
@@ -140,9 +136,7 @@ namespace AgendaH
             CargarContactos();
         }
 
-        // -----------------------------------------------------------
-        //                        BORRAR
-        // -----------------------------------------------------------
+        
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
@@ -161,9 +155,7 @@ namespace AgendaH
             }
         }
 
-        // -----------------------------------------------------------
-        //                     SELECCIÓN GRID
-        // -----------------------------------------------------------
+        
 
         private void dataGridContactos_SelectionChanged(object sender, EventArgs e)
         {
@@ -172,27 +164,27 @@ namespace AgendaH
 
             var row = dataGridContactos.SelectedRows[0];
 
-            // 1. Validar que la columna exista
+            
             if (!row.Cells.Contains(row.Cells["Id"]))
                 return;
 
-            // 2. Validar que no esté vacío
+            
             if (row.Cells["Id"].Value == null || row.Cells["Id"].Value == DBNull.Value)
                 return;
 
-            // 3. Convertir correctamente (sin cast directo peligroso)
+            
             int id;
 
             if (!int.TryParse(row.Cells["Id"].Value.ToString(), out id))
                 return;
 
-            // 4. Buscar el contacto real
+           
             contactoSeleccionado = contactoRepository.GetById(id);
 
             if (contactoSeleccionado == null)
                 return;
 
-            // 5. Cargar datos al formulario
+            
             cmbPersonaID.SelectedValue = contactoSeleccionado.PersonaId;
             cmbTipo.Text = contactoSeleccionado.Tipo;
             txtValor.Text = contactoSeleccionado.Valor;
@@ -201,9 +193,7 @@ namespace AgendaH
         }
 
 
-        // -----------------------------------------------------------
-        //                         EXTRA
-        // -----------------------------------------------------------
+        
 
         private void Limpiar()
         {

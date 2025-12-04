@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace AgendaH.Repository
 {
-    // T: El tipo de entidad (Persona, Contacto, Cita)
+    // T: tipo de entidad (Persona, Contacto, Cita)
     public interface IRepository<T>
     {
-        // Métodos CRUD básicos
+        // Métodos CRUD
         void Save(T entity);
         void Update(T entity);
         void Delete(int id);
         T GetById(int id);
 
-        // Colecciones + LINQ: Devuelve una lista de la entidad
+        // Colecciones + LINQ
         List<T> GetAll();
     }
 }

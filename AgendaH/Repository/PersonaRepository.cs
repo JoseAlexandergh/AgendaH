@@ -8,7 +8,7 @@ using AgendaH.Model;
 
 namespace AgendaH.Repository
 {
-    // Implementa IRepository<Persona>
+    
     public class PersonaRepository : IRepository<Persona>
     {
         private readonly string connectionString;
@@ -18,7 +18,7 @@ namespace AgendaH.Repository
             connectionString = ConfigurationManager.ConnectionStrings["cn"].ConnectionString;
         }
 
-        // C de CRUD: SAVE (Insertar una nueva Persona)
+        
         public void Save(Persona persona)
         {
             string query = @"INSERT INTO Personas (Cedula, Nombre, Apellido, Sexo, FechaNacimiento, Direccion, Notas) 
@@ -47,7 +47,7 @@ namespace AgendaH.Repository
             }
         }
 
-        // R de CRUD: GET ALL (Obtener todas las Personas)
+       
         public List<Persona> GetAll()
         {
             List<Persona> listaPersonas = new List<Persona>();
@@ -78,7 +78,7 @@ namespace AgendaH.Repository
             return listaPersonas;
         }
 
-        // U y D de CRUD (Actualizar, Eliminar) y GetById se implementarán en la siguiente fase
+       
         public void Update(Persona entity) { throw new NotImplementedException(); }
         public void Delete(int id) { throw new NotImplementedException(); }
         public Persona GetById(int id) { throw new NotImplementedException(); }

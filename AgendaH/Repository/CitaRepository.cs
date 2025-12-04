@@ -16,9 +16,7 @@ namespace AgendaH.Repository
             connectionString = ConfigurationManager.ConnectionStrings["cn"].ConnectionString;
         }
 
-        // --------------------
-        // INSERTAR
-        // --------------------
+        
         public void Save(Cita cita)
         {
             string query = @"
@@ -37,9 +35,7 @@ namespace AgendaH.Repository
             }
         }
 
-        // --------------------
-        // ACTUALIZAR
-        // --------------------
+        
         public void Update(Cita cita)
         {
             string query = @"
@@ -62,9 +58,7 @@ namespace AgendaH.Repository
             }
         }
 
-        // --------------------
-        // OBTENER POR ID
-        // --------------------
+        
         public Cita GetById(int id)
         {
             Cita cita = null;
@@ -101,9 +95,7 @@ namespace AgendaH.Repository
             return cita;
         }
 
-        // --------------------
-        // OBTENER TODAS
-        // --------------------
+        
         public List<Cita> GetAll()
         {
             var lista = new List<Cita>();
@@ -138,9 +130,7 @@ namespace AgendaH.Repository
             return lista;
         }
 
-        // --------------------
-        // BORRAR
-        // --------------------
+        
         public void Delete(int id)
         {
             string query = @"DELETE FROM Citas WHERE ID = @ID;";

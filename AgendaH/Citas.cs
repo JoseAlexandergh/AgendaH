@@ -23,9 +23,7 @@ namespace AgendaH
             CargarCitas();
         }
 
-        // -------------------------
-        // CARGAR PERSONAS EN EL COMBO
-        // -------------------------
+        
         private void CargarPersonas()
         {
             var personas = personaRepo.GetAll();
@@ -34,17 +32,13 @@ namespace AgendaH
             cbPersonas.ValueMember = "ID";
         }
 
-        // -------------------------
-        // CARGAR TABLA DE CITAS
-        // -------------------------
+        
         private void CargarCitas()
         {
             dgvCitas.DataSource = citaRepo.GetAll();
         }
 
-        // -------------------------
-        // GUARDAR / ACTUALIZAR
-        // -------------------------
+        
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
@@ -58,13 +52,13 @@ namespace AgendaH
 
                 if (string.IsNullOrEmpty(txtID.Text))
                 {
-                    // Nuevo
+                    
                     citaRepo.Save(cita);
                     MessageBox.Show("Cita registrada.");
                 }
                 else
                 {
-                    // Actualizar
+                    
                     cita.ID = int.Parse(txtID.Text);
                     citaRepo.Update(cita);
                     MessageBox.Show("Cita actualizada.");
@@ -79,9 +73,7 @@ namespace AgendaH
             }
         }
 
-        // -------------------------
-        // ELIMINAR
-        // -------------------------
+        
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtID.Text))
@@ -101,9 +93,7 @@ namespace AgendaH
             }
         }
 
-        // -------------------------
-        // LIMPIAR CAMPOS
-        // -------------------------
+        
         private void LimpiarCampos()
         {
             txtID.Clear();
@@ -117,9 +107,7 @@ namespace AgendaH
             LimpiarCampos();
         }
 
-        // -------------------------
-        // CUANDO SE HACE CLICK EN LA TABLA
-        // -------------------------
+        
         private void dgvCitas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;

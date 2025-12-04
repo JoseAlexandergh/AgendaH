@@ -14,9 +14,7 @@ namespace AgendaH.Repository
         private readonly string connectionString =
             "Server=YOUR_SERVER;Database=AgendaPersonas;Trusted_Connection=True;";
 
-        // ---------------------------
-        // ExecuteNonQuery
-        // ---------------------------
+        
         protected void ExecuteNonQuery(string query, Action<SqlCommand> parameters = null)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -31,9 +29,7 @@ namespace AgendaH.Repository
             }
         }
 
-        // ---------------------------
-        // ExecuteReader
-        // ---------------------------
+        
         protected void ExecuteReader(string query, Action<SqlDataReader> readAction,
                                      Action<SqlCommand> parameters = null)
         {
