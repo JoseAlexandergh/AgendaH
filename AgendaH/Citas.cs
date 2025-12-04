@@ -16,6 +16,7 @@ namespace AgendaH
             InitializeComponent();
         }
 
+
         private void FormCitas_Load(object sender, EventArgs e)
         {
             CargarPersonas();
