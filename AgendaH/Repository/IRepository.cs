@@ -9,7 +9,7 @@ namespace AgendaH.Repository
     // T: tipo de entidad (Persona, Contacto, Cita)
     public interface IRepository<T>
     {
-        // Métodos CRUD
+        // Metodos CRUD
         void Save(T entity);
         void Update(T entity);
         void Delete(int id);
